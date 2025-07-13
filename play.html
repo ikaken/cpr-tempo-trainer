@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPRテンポトレーナー - プレイ</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CPRテンポトレーナー</h1>
+        </header>
+
+        <div class="youtube-container">
+            <div id="player-container">
+                <div id="player"></div>
+            </div>
+
+        </div>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-button active" data-tab="start">スタート</button>
+                <button class="tab-button" data-tab="warmup">ウォームアップ</button>
+                <button class="tab-button" data-tab="game">テンポトレーニング</button>
+                <button class="tab-button" data-tab="result">結果</button>
+            </div>
+
+            <div class="tab-content active" id="start-tab">
+                <h2>CPRテンポトレーナー</h2>
+                <p>スペースキーを押して胸骨圧迫のテンポを練習しましょう</p>
+                <p class="target-bpm">目標テンポ: <span>100</span> BPM</p>
+                <button id="start-warmup" class="primary-button">ウォームアップ開始</button>
+            </div>
+
+            <div class="tab-content" id="warmup-tab">
+                <h2>ウォームアップ</h2>
+                <p>スペースキーを8回連続で押してテンポを測定します</p>
+                <div class="counter">
+                    <span id="warmup-counter">0</span> / <span id="warmup-total">8</span>
+                </div>
+                <div id="warmup-feedback" class="feedback"></div>
+                <div id="warmup-bpm" class="bpm-display"></div>
+            </div>
+
+            <div class="tab-content" id="game-tab">
+                <h2>テンポを維持しよう！</h2>
+                <div class="tempo-meter">
+                    <div class="tempo-scale">
+                        <div class="scale-mark" data-bpm="80">80</div>
+                        <div class="scale-mark" data-bpm="90">90</div>
+                        <div class="scale-mark" data-bpm="100">100</div>
+                        <div class="scale-mark" data-bpm="110">110</div>
+                        <div class="scale-mark" data-bpm="120">120</div>
+                    </div>
+                    <div class="tempo-needle"></div>
+                </div>
+                <div class="beat-counter">
+                    <span id="beat-count">0</span>
+                </div>
+                <div id="current-bpm" class="bpm-display">BPM: 100</div>
+                <div id="tempo-feedback" class="feedback">スペースキーを押してテンポを維持してください</div>
+            </div>
+
+            <div class="tab-content" id="result-tab">
+                <h2>結果</h2>
+                <div id="result-message" class="result-message"></div>
+                <div id="result-stats" class="result-stats"></div>
+                <button id="reset-game" class="primary-button">もう一度挑戦</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>CPRテンポトレーナー - 適切なテンポで胸骨圧迫の練習ができるWebアプリ</p>
+    </footer>
+
+    <script src="js/redirect.js"></script>
+    <script src="js/video-data.js"></script>
+    <script src="js/tempo-trainer.js"></script>
+    <script src="js/youtube-api.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

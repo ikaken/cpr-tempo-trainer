@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPRテンポトレーナー - 動画選択</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .video-selection-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>CPRテンポトレーナー</h1>
+        </header>
+
+        <div class="video-selection-container">
+            <h2>トレーニング動画を選択</h2>
+            <p class="description">以下の動画から練習に使用する曲を選んでください</p>
+            <div class="video-selection-grid" id="video-selection-grid">
+                <!-- 動画選択肢がJavaScriptで動的に追加されます -->
+                <div class="video-loading">動画情報を読み込み中...</div>
+            </div>
+            
+            <button id="select-video-button" class="select-video-button" disabled>選択した動画で開始</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 CPRテンポトレーナー</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/youtube-api.js"></script>
+    <script src="js/video-data.js"></script>
+    <script src="js/video-selector.js"></script>
+</body>
+</html>
